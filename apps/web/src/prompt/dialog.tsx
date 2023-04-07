@@ -14,6 +14,7 @@ export type { Props as PromptDialogContentProps };
 
 const Content = (props: Props): JSX.Element => {
   const { title, description, buttons } = props;
+
   return (
     <Radix.Portal>
       <Radix.Overlay

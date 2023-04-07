@@ -67,6 +67,7 @@ const OPTIONS: monaco.editor.IStandaloneEditorConstructionOptions = {
 interface Params {
   setEditor: EditorState["setEditor"];
   containerRef: RefObject<HTMLDivElement>;
+  //storedEditorValue: string;
 }
 
 export const useEditorCreate = (params: Params): void => {
@@ -82,6 +83,14 @@ export const useEditorCreate = (params: Params): void => {
       value: SAMPLE_TAILWIND,
       // value: "",
     });
+
+    //const autoSave = debounce(() => {
+    //  const editorValue: string = editor.getValue();
+    //  autoSaveWorkerURL.postMessage({ changes: editorValue });
+    //}, 1000);
+
+    //editor.onDidChangeModelContent(autoSave);
+
     setEditor(editor);
 
     return () => {
